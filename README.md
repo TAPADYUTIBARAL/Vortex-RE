@@ -59,7 +59,7 @@ flowchart TD
 
 ## ✨ Key Features
 
-### 🔍 Specialized RTOS & VxWorks Analysis
+### 🔍 Specialized VxWorks Analysis
 * **Symbol Table Recovery:** Parses `sysSymTbl` structures and unstripped memory regions to reconstruct function names and global variables.
 * **OS Primitive Identification:** Maps calls to `taskSpawn`, `taskInit`, semaphores (`semBCreate`), and message queues (`msgQCreate`).
 * **Exposure Detection:** Automated heuristics for unauthenticated Target Server (WDB) interfaces, exposed debug shells, and ISR/Task stack overflow vulnerabilities.

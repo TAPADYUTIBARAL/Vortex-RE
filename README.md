@@ -4,6 +4,10 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Ghidra](https://img.shields.io/badge/Ghidra-10.x%20%7C%2011.x-red.svg)](https://ghidra-sre.org/)
+[![Linux](https://img.shields.io/badge/OS-Linux-FCC624?logo=linux&logoColor=black)](https://www.kernel.org/)
+[![VxWorks](https://img.shields.io/badge/RTOS-VxWorks-00529B)](https://www.windriver.com/products/vxworks)
+[![LLM Agent](https://img.shields.io/badge/AI-LLM--Agent-8A2BE2)](https://github.com/TAPADYUTIBARAL/Vortex-RE)
+[![Reverse Engineering](https://img.shields.io/badge/Domain-Reverse%20Engineering-orange.svg)](https://github.com/TAPADYUTIBARAL/Vortex-RE)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **Vortex-RE** is an automated reverse engineering and firmware triage framework. Unlike basic LLM wrappers that merely pass decompiled C snippets to a prompt, Vortex-RE operates as a **ReAct (Reason + Act)** orchestration loop. It combines static decompilation heuristics, specialized RTOS symbol recovery, and dynamic emulation to perform contextual vulnerability assessment across **Linux ELFs** and **VxWorks RTOS** binary targets.

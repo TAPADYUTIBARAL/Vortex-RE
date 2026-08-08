@@ -18,3 +18,47 @@ It combines static decompilation heuristics (Ghidra) and multi-engine dynamic em
 ## 🛠️ Architecture Overview
 
 FirmwareAgent bridges static disassemblers, multi-engine emulators, and Cloud LLMs into an autonomous analysis pipeline:
+
+---
+
+## ✨ Key Features
+
+### 🔍 Specialized RTOS & VxWorks Analysis
+* **Symbol Table Recovery:** Parses `sysSymTbl` structures and unstripped memory regions to reconstruct function names and global variables.
+* **OS Primitive Identification:** Maps calls to `taskSpawn`, `taskInit`, semaphores (`semBCreate`), and message queues (`msgQCreate`).
+* **Exposure Detection:** Automated heuristics for unauthenticated Target Server (WDB) interfaces, exposed debug shells, and ISR/Task stack overflow vulnerabilities.
+
+### 🐧 Linux Binary & ELF Support
+* **Attack Surface Mapping:** Traces untrusted inputs originating from network sockets (`recv`, `recvfrom`) down to dangerous string/memory sinks (`memcpy`, `sprintf`, `system`).
+* **Protection Auditing:** Detects binary mitigations including NX/DEP, ASLR/PIE, Stack Canaries, and RELRO.
+
+### ⚡ Dynamic Emulation & Verification
+* **Multi-Engine Runtime:** Instruction-level emulation via **Unicorn Engine** and full/user-mode emulation via **QEMU**.
+* **Crash Triage:** Automated input generation and harness execution to validate candidates identified during static analysis.
+
+---
+
+## 🚀 Quickstart
+
+### Prerequisites
+
+Ensure you have the following tools installed on your host system:
+
+* **Python 3.10+**
+* **Ghidra** (Set the `GHIDRA_INSTALL_DIR` environment variable)
+* **QEMU** (`qemu-user` or `qemu-system` binaries in `$PATH`)
+* **GDB** (with cross-architecture support if analyzing non-x86 binaries)
+
+### 1. Installation
+
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/FirmwareAgent.git](https://github.com/your-username/FirmwareAgent.git)
+cd FirmwareAgent
+
+# Create a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt

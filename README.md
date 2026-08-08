@@ -15,6 +15,7 @@
 Vortex-RE bridges static disassemblers, multi-engine emulators, and Cloud LLMs into an autonomous analysis pipeline:
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'transparent': true, 'lineColor': '#58a6ff', 'nodeBorder': '#30363d', 'clusterBkg': 'transparent', 'clusterBorder': '#30363d'}}}%%
 flowchart TD
     subgraph Cloud LLM Engine ["Cloud LLM Engine (Reasoning Layer)"]
         LLM["Claude 3.5 Sonnet / GPT-4o / Gemini 1.5 Pro"]
@@ -28,7 +29,7 @@ flowchart TD
         subgraph Ingestion ["Ingestion & Pre-processing"]
             BaseAddr["Base Address Detection"]
             Headers["ELF / Binary Header Analysis"]
-            Extract["Filesystem Extraction (Binwalk / HRFS)"]
+            Extract["Filesystem Extraction"]
         end
 
         subgraph Static ["Static Analysis Engine"]
@@ -38,9 +39,9 @@ flowchart TD
         end
 
         subgraph Dynamic ["Dynamic Emulation Engine"]
-            Unicorn["Unicorn Engine (Func Emulation)"]
+            Unicorn["Unicorn Engine (Func)"]
             QEMU["QEMU (System / User Mode)"]
-            GDB["Managed GDB Debugging & Crash Triage"]
+            GDB["Managed GDB & Crash Triage"]
         end
     end
 
@@ -52,9 +53,8 @@ flowchart TD
 
     Ingestion -. "Binary Context" .-> ReAct
     Static -. "Decompilation & Candidate Flaws" .-> ReAct
-    Dynamic -. "Crash Logs & Execution Traces" .-> ReAct
+    Dynamic -. "Crash Logs & Traces" .-> ReAct
 ```
-
 ---
 
 ## ✨ Key Features

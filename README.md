@@ -146,7 +146,8 @@ python re_agent.py --target /path/to/target_binary
 
 
 ```
-### 5.⚠️ Ethical Use & Disclaimer
-```text
+## ⚠️ Ethical Use & Disclaimer
+```bash
 This framework is developed exclusively for authorized security research, defensive auditing, and educational purposes. Always obtain explicit, documented authorization from target system owners prior to analyzing or testing proprietary firmware, software, or hardware platforms.
+
 ```

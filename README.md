@@ -1,4 +1,4 @@
-# FirmwareAgent 🛡️
+# Vortex-RE 🛡️
 
 > **An Autonomous, Tool-Augmented AI Agent Framework for Linux & VxWorks Binary Analysis.**
 

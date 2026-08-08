@@ -102,10 +102,7 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-
-### 2. Environment Configuration
-# Copy the example environment file and configure your local settings:
-cp .env.example .env
+```
 
 ### 2. Environment Configuration
 
@@ -114,12 +111,18 @@ Copy the example environment file and configure your local settings:
 ```bash
 cp .env.example .env
 
+```
+
 ### 3. Usage Examples
 
-#### Analyze a Linux ELF Binary
+#### Analyze a Binary
 ```bash
 python re_agent.py --target /path/to/target_binary
 
+```
+### 4. Repository Structure
+
+```text
 ├── re_agent.py              # Central agent orchestrator & ReAct execution loop
 ├── models.py                # Data structures & agent state management
 ├── vuln_list.py             # Vulnerability signature definitions & sink patterns
@@ -141,8 +144,9 @@ python re_agent.py --target /path/to/target_binary
 ├── vxworks/                 # VxWorks extraction & load address helpers
 └── emulation/               # Dynamic execution engines (Unicorn, QEMU, GDB)
 
-⚠️ Ethical Use & Disclaimer
-This framework is developed exclusively for authorized security research, defensive auditing, and educational purposes. Always obtain explicit, documented authorization from target system owners prior to analyzing or testing proprietary firmware, software, or hardware platforms.
 
-📄 License
-Distributed under the MIT License. See LICENSE for details.
+```
+### 5.⚠️ Ethical Use & Disclaimer
+```text
+This framework is developed exclusively for authorized security research, defensive auditing, and educational purposes. Always obtain explicit, documented authorization from target system owners prior to analyzing or testing proprietary firmware, software, or hardware platforms.
+```

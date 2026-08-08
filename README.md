@@ -14,6 +14,7 @@
 
 Vortex-RE bridges static disassemblers, multi-engine emulators, and Cloud LLMs into an autonomous analysis pipeline:
 
+```mermaid
 flowchart TD
     subgraph Cloud LLM Engine ["Cloud LLM Engine (Reasoning Layer)"]
         LLM["Claude 3.5 Sonnet / GPT-4o / Gemini 1.5 Pro"]
@@ -43,24 +44,16 @@ flowchart TD
         end
     end
 
-    %% Flow Connections
     LLM <== "Structured Tool Calls & Responses" ==> ReAct
     
     ReAct --> Ingestion
     ReAct --> Static
     ReAct --> Dynamic
 
-    %% Feedback Loops
     Ingestion -. "Binary Context" .-> ReAct
     Static -. "Decompilation & Candidate Flaws" .-> ReAct
     Dynamic -. "Crash Logs & Execution Traces" .-> ReAct
-
-    %% Styling
-    style Cloud LLM Engine fill:#f9f,stroke:#333,stroke-width:2px
-    style Agent fill:#bbf,stroke:#333,stroke-width:2px
-    style Ingestion fill:#dfd,stroke:#333,stroke-width:1px
-    style Static fill:#ffd,stroke:#333,stroke-width:1px
-    style Dynamic fill:#fdd,stroke:#333,stroke-width:1px
+```
 
 ---
 
@@ -106,26 +99,3 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-
-# .env file
-ANTHROPIC_API_KEY="your-anthropic-api-key"
-OPENAI_API_KEY="your-openai-api-key"
-GHIDRA_INSTALL_DIR="/path/to/ghidra"
-
-##📂 Repository Structure
-
-├── re_agent.py              # Central agent orchestrator & execution loop
-├── models.py                # Data structures & state management
-├── vuln_list.py             # Vulnerability signature definitions
-├── toolkit/                 # Ingestion, MCU heuristics, and LLM interface
-│   ├── detector.py          # Binary format detection
-│   ├── extractor.py         # Archive & filesystem extractor
-│   └── llm.py               # Cloud LLM client API wrappers
-├── ghidra_scripts/          # Generic Ghidra static analysis scripts
-│   ├── FindAuthBypass.py    # Authentication check analysis
-│   └── FindVulnPatterns.py  # Dangerous C function call detection
-├── ghidra_scripts_vxworks/  # VxWorks-specific Ghidra analysis scripts
-│   ├── VxSymbolTableParser.py # Symbol table parsing logic
-│   └── FindVxWDBExposure.py   # WDB target server exposure checks
-├── vxworks/                 # VxWorks extraction & load address helpers
-└── emulation/               # Dynamic execution engines (Unicorn, QEMU, GDB)

@@ -1,0 +1,23 @@
+# Environment variables and API keys (CRITICAL)
+.env
+.env.local
+
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders
+.venv/
+env/
+venv/
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+.claude/
+
+# Temporary analysis outputs / Ghidra logs
+*.log
+*.tmp

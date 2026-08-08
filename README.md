@@ -64,7 +64,7 @@ flowchart TD
 * **OS Primitive Identification:** Maps calls to `taskSpawn`, `taskInit`, semaphores (`semBCreate`), and message queues (`msgQCreate`).
 * **Exposure Detection:** Automated heuristics for unauthenticated Target Server (WDB) interfaces, exposed debug shells, and ISR/Task stack overflow vulnerabilities.
 
-### 🐧 Linux Binary & ELF Support
+### 🐧 Linux Binary Support
 * **Attack Surface Mapping:** Traces untrusted inputs originating from network sockets (`recv`, `recvfrom`) down to dangerous string/memory sinks (`memcpy`, `sprintf`, `system`).
 * **Protection Auditing:** Detects binary mitigations including NX/DEP, ASLR/PIE, Stack Canaries, and RELRO.
 
